@@ -1,5 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
+
 .App {
   text-align: center;
+  background-color: #D4F1F4;
 }
 
 .App-logo {
@@ -36,3 +41,28 @@
     transform: rotate(360deg);
   }
 }
+
+.App p, .App h1, .App h2, .App h3, .App h4, .App h5, .App h6, .app a, .app nav, .navbar-brand, .nav-link, .dropdown-item {
+  font-family: 'Playfair Display', serif;
+  color: #05445E;
+}
+
+.product-details h5, .product-details p {
+  font-family: 'Open Sans', sans-serif;
+  color: #05445E;
+}
+
+#welcome-video-text{
+  color: white;
+}
+
+.card {
+  border-radius: 50px;
+}
+
+#cart-button, #subscribe-button, #login-button {
+  background-color: #189AB4;
+  border-color: #05445E;
+  color: white;
+}
+

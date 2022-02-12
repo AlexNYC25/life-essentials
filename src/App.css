@@ -57,7 +57,7 @@
 }
 
 .card {
-  border-radius: 50px;
+  border-radius: 5px;
 }
 
 #cart-button, #subscribe-button, #login-button {
@@ -66,3 +66,21 @@
   color: white;
 }
 
+.cart-options .cart-quantity-button {
+  background-color: #189AB4;
+  border-color: #05445E;
+  color: white;
+  border-radius: 0%;
+}
+
+.cart-options .cart-remove-button {
+  background-color: #E63946;
+  border-color: #05445E;
+  color: white;
+  border-radius: 0;
+}
+
+.cart-totals h5, .cart-totals p {
+  font-family: 'Open Sans', sans-serif;
+  color: #05445E;
+}

@@ -1,5 +1,4 @@
 
-import react from "react"
 import { Navbar, NavDropdown, Nav} from "react-bootstrap"
 import {Link} from "react-router-dom"
 
@@ -30,7 +29,7 @@ export default function NavBar() {
                             Electronics
                         </Link>
                         <Link to="/category/jewelery" className="dropdown-item">
-                            Jewlery
+                            Jewelry
                         </Link>
                     </NavDropdown>
                     <Link to="/" className="nav-link">
@@ -42,9 +41,9 @@ export default function NavBar() {
                 </Nav>
 
                 <Nav className="justify-content-end">
-                    <button type="button" class="btn position-relative" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+                    <button type="button" className="btn position-relative" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
                         <FontAwesomeIcon icon={faShoppingCart} />
-                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                        <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
                             1
                         </span>
                     </button>

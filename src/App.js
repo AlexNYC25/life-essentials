@@ -12,7 +12,6 @@ import Search from './pages/Search';
 import Welcome from './pages/Welcome';
 import Product from './pages/Product';
 import Category from './pages/Category';
-import Checkout from './pages/Checkout';
 
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faTrash } from '@fortawesome/free-solid-svg-icons';
@@ -78,10 +77,30 @@ function App() {
 			setLoading(false);
 		})
 		
-
-		
 		
 	}
+
+	let addItem = (itemId, quantity) => {
+		let itemExists = false;
+		let itemIndex = 0;
+		shoppingCartData.forEach((item, index) => {
+			if(item.productId === itemId){
+				itemExists = true;
+				itemIndex = index;
+			}
+		});
+
+		if(itemExists){
+			let newData = [...shoppingCartData];
+			newData[itemIndex].quantity += quantity;
+			getShoppingCartData(newData);
+		}else{
+			let newData = [...shoppingCartData];
+			newData.push({productId: itemId, quantity: quantity});
+			getShoppingCartData(newData);
+		}
+	}
+
 
 	// func to remove an item from the shopping cart data array given an item id
 	let removeItem = (id) => {
@@ -172,7 +191,6 @@ function App() {
 	
   	}
 
-	
 	useEffect(() => {
 		getShoppingCartData(shoppingCartData);
 	}, []);
@@ -203,7 +221,7 @@ function App() {
 		<Routes>
 			<Route path="/" element={<Welcome />} />
 			<Route path="/search" element={<Search />} />
-			<Route path="/product/:id" element={<Product />} />
+			<Route path="/product/:id" element={<Product addItem={addItem} />} />
 			<Route path="/category/:category" element={<Category />} />
 		</Routes>
 	  	<Footer />
@@ -215,9 +233,16 @@ function App() {
 			</div>
 			<div class="offcanvas-body ">
 
-			{!userLoggedIn && loginForm}
+				{!userLoggedIn && loginForm}
 
-			{userLoggedIn && userInfoContainer}
+				{userLoggedIn && userInfoContainer}
+
+				{loading && <div className="d-grid justify-content-center">
+					<div className="spinner-border text-primary" role="status">
+						<span className="sr-only">Loading...</span>
+					</div>
+				</div>}
+
 				
 				<div className='container' id="shopping-cart-section" >
 					{shoppingCartData.map(item => (
@@ -261,7 +286,7 @@ function App() {
 						<p>{totalPrice()}</p>
 					</div>
 					<div className='col-lg-12'>
-						<button class="btn btn-primary w-100" type="button">Checkout</button>
+						<button id="checkout-btn" class="btn btn-primary w-100" type="button">Checkout</button>
 					</div>
 				</div>
 			</div>

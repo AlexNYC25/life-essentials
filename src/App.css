@@ -2,6 +2,10 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
 
+html {
+  background-color: #D4F1F4;
+}
+
 .App {
   text-align: center;
   background-color: #D4F1F4;
@@ -83,4 +87,11 @@
 .cart-totals h5, .cart-totals p {
   font-family: 'Open Sans', sans-serif;
   color: #05445E;
+}
+
+#checkout-btn {
+  background-color: #189AB4;
+  border-color: #05445E;
+  color: white;
+  border-radius: 0%;
 }

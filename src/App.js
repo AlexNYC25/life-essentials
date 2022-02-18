@@ -8,7 +8,6 @@ import { Routes, Route } from 'react-router-dom';
 
 import axios from 'axios';
 
-import Search from './pages/Search';
 import Welcome from './pages/Welcome';
 import Product from './pages/Product';
 import Category from './pages/Category';
@@ -84,12 +83,12 @@ function App() {
 		let itemExists = false;
 		let itemIndex = 0;
 		shoppingCartData.forEach((item, index) => {
-			if(item.productId === itemId){
+			if(Number(item.productId) === Number(itemId) ){
 				itemExists = true;
 				itemIndex = index;
 			}
 		});
-
+		console.log(itemExists);
 		if(itemExists){
 			let newData = [...shoppingCartData];
 			newData[itemIndex].quantity += quantity;
@@ -143,7 +142,7 @@ function App() {
 	// func to merge local shopping cart data with backend shopping cart data
 	let mergeShoppingCarts = async (apiData, localData) => {
 		let mergedData = [...localData];
-		console.log(apiData)
+
 		apiData.forEach(apiItem => {
 			let localItem = mergedData.find(localItem => localItem.productId === apiItem.productId);
 
@@ -185,7 +184,6 @@ function App() {
 				// if not valid set userLoggedIn to false
 				// present error message
 				setUserLoggedIn(false);
-				console.log('Invalid credentials');
 			}
 		});
 	
@@ -217,10 +215,9 @@ function App() {
 
  	return (
 		<div className="App">
-		<NavBar />
+		<NavBar itemCount={itemCount} />
 		<Routes>
 			<Route path="/" element={<Welcome />} />
-			<Route path="/search" element={<Search />} />
 			<Route path="/product/:id" element={<Product addItem={addItem} />} />
 			<Route path="/category/:category" element={<Category />} />
 		</Routes>

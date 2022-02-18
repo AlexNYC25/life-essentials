@@ -1,5 +1,4 @@
 import Col from "react-bootstrap/Col"
-import { Image } from "react-bootstrap"
 import { Link } from "react-router-dom"
 
 export default function ProductCard(props){
@@ -10,9 +9,9 @@ export default function ProductCard(props){
         let halfStars = rating - wholeStars > .5 ? 1 : 0;
         let emptyStars = 5 - wholeStars - halfStars
 
-        let wholeStarSvg = <img src="https://img.icons8.com/fluency/48/000000/filled-star.png" style={{width:'10%'}}/>
-        let halfStarSvg = <img src="https://img.icons8.com/color/48/000000/star-half-empty.png" style={{width:'10%'}}/>
-        let emptyStarSvg = <img src="https://img.icons8.com/color/48/000000/star--v1.png" style={{width:'10%'}}/>
+        let wholeStarSvg = <img src="https://img.icons8.com/fluency/48/000000/filled-star.png" alt="whole-star-rating" style={{width:'10%'}}/>
+        let halfStarSvg = <img src="https://img.icons8.com/color/48/000000/star-half-empty.png" alt="half-star-rating" style={{width:'10%'}}/>
+        let emptyStarSvg = <img src="https://img.icons8.com/color/48/000000/star--v1.png" alt="empty-star-rating" style={{width:'10%'}}/>
 
         for(let i = 0; i < wholeStars; i++){
             elements.push(wholeStarSvg)
@@ -29,8 +28,8 @@ export default function ProductCard(props){
     return (
         <Col xs={12} sm={6} md={4} lg={3} xl={3} >
             <div className="card mb-3" >
-                <Link to={'/product/'+ props.product.id} >
-                    <img src={props.product.image} key={45} className="card-img-top thumbnail" style={{width:'100%', height:'45vh', objectFit:'contain'}} />
+                <Link to={'/product/'+ props?.id} >
+                    <img src={props.product?.image} alt={props.product.title} className="card-img-top thumbnail" style={{width:'100%', height:'45vh', objectFit:'contain'}} />
                     <div className="absolute-position" >
                         {getStars(props.product.rating.rate)}
                     </div>
@@ -38,7 +37,6 @@ export default function ProductCard(props){
                 <div className="card-body product-details" style={{height:'20vh'}}>
                     <h5 className="card-title">{props.product.title}</h5>
                 </div>
-                
             </div>
         </Col>
     )

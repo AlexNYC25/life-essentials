@@ -1,4 +1,3 @@
-
 import { Navbar, NavDropdown, Nav} from "react-bootstrap"
 import {Link} from "react-router-dom"
 
@@ -6,7 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons'
 
 
-export default function NavBar() {
+export default function NavBar(props) {
 
     return (
         <Navbar className="px-2 pt-3" expand="lg">
@@ -44,7 +43,7 @@ export default function NavBar() {
                     <button type="button" className="btn position-relative" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
                         <FontAwesomeIcon icon={faShoppingCart} />
                         <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-                            1
+                            {props.itemCount()}
                         </span>
                     </button>
                     

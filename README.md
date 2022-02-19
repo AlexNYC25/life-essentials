@@ -1,70 +1,34 @@
-# Getting Started with Create React App
+# Life Essentials
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+My take on a store front page built using React.js to create the UI and using the [Fake Store API](https://fakestoreapi.com/) to supply the page with placeholder data such as product details, user information, and saved shopping carts
 
-## Available Scripts
+## The Home Page
 
-In the project directory, you can run:
+The Main page was created with the Bootstrap Library and Bootstrap Component Library to organize various elements using 
+Bootstrap's grid system. 
 
-### `npm start`
+The initial welcome video and other images was retrieved from [Pexels](https://www.pexels.com/) online repository of image and video assets.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+![Home Page](https://github.com/AlexNYC25/life-essentials/blob/main/examples/mainPage-min.png)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Product Category Page
 
-### `npm test`
+The Product Category Page similarly used Bootstrap's grid system to display product cards with product information such as a product's image, name and rating using stars svg elements retrieved from [icon8](https://icons8.com/)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+With The Product details being fetched using axios from the previously mentioned Fake Store API 
 
-### `npm run build`
+![Category Page](https://github.com/AlexNYC25/life-essentials/blob/main/examples/category-min.png)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Product Page
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+The Product Page for each individual product details were displayed with the grid system as well as having a quantity number with the ability to add that product with the provided quantity into the shopping cart.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+![Product Page](https://github.com/AlexNYC25/life-essentials/blob/main/examples/product-min.png)
 
-### `npm run eject`
+## Shopping Cart
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+The actual shopping cart is built using react hooks(useState, useEffect) to hold shopping cart data, while fetching product data from the API to display details such as the product image and name.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Other Details
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Various other components were also used such as [Font Awesome's](https://fontawesome.com/) icons for UI elements and [Google Fonts](https://fonts.google.com/) Open Sans and Playfair Display Fonts were also used.

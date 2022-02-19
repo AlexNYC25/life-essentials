@@ -23,4 +23,5 @@ yarn-debug.log*
 yarn-error.log*
 
 # original media files
+/examples/*.gif
 /examples/*.mov
